@@ -1,88 +1,85 @@
 name: simple_live_app
-version: 1.8.6+10806
+version: 1.7.15+10715
 publish_to: none
 description: "Simple Live APP"
-environment:
+environment: 
   sdk: '>=3.0.5 <4.0.0'
+  flutter: 3.32.0
 
-dependencies:
+dependencies: 
   simple_live_core:
     path: ../simple_live_core
   # 图标
   cupertino_icons: ^1.0.8
-  remixicon: ^1.2.0
+  remixicon: ^1.4.1 #Remix图标
 
   # 框架、工具
-  get: ^4.6.6
-  dio: ^5.7.0
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-  logger: ^2.4.0
-  intl: ^0.20.2
-  qr_flutter: ^4.1.0
-  dynamic_color: ^1.7.0
-  path: ^1.9.0
-  udp: ^5.0.3 # 修复：降级到可用版本
-  uuid: ^4.5.0
-  webdav_client: ^1.2.2
-  archive: ^3.6.1
+  archive: ^3.6.1 #文件压缩
+  get: ^4.7.2 #状态管理、路由管理、国际化
+  dio: ^5.4.3+1 #网络请求
+  hive: 2.2.3 #持久化存储
+  hive_flutter: 1.1.0 #持久化存储
+  logger: ^2.0.2 #日志
+  intl: ^0.20.2 #国际化
+  qr_flutter: ^4.1.0 #二维码生成
+  dynamic_color: ^1.7.0 #动态颜色
+  path: any
+  udp: ^5.0.3 #UDP
+  uuid: ^4.5.1 #UUID
+  synchronized: ^3.3.1 #线程安全
 
-  # Widget
-  flutter_staggered_grid_view: ^0.7.0
-  flutter_easyrefresh: ^2.2.2
-  extended_image: ^9.1.0
-  flutter_smart_dialog: ^4.9.7+7
-  sticky_headers: ^0.3.0+2
-  lottie: ^3.1.2
-  ns_danmaku:
-    git:
-      url: https://github.com/xiaoyaocz/flutter_ns_danmaku.git
-      tag: v0.0.9
+  #Widget
+  flutter_staggered_grid_view: ^0.7.0 #瀑布流/GridView
+  flutter_easyrefresh: 2.2.2 #下拉刷新、上拉加载
+  extended_image: ^8.2.0 #拓展Image,支持缓存
+  flutter_smart_dialog: ^4.9.8+7 #各种弹窗 Toast/Dialog/Popup
+  sticky_headers: ^0.3.0+2 #吸顶
+  lottie: ^1.4.3 #lottie动画
+  canvas_danmaku: ^0.2.7
 
-  # 系统交互
-  package_info_plus: ^8.3.0
-  device_info_plus: ^10.1.0
-  url_launcher: ^6.3.1
-  share_plus: ^10.1.4
-  path_provider: ^2.1.5
-  cross_file: ^0.3.4+2
-  permission_handler: ^11.3.1
-  image_gallery_saver: ^2.0.3
-  screen_brightness: ^2.1.2
-  wakelock_plus: ^1.2.11
-  file_picker: ^8.1.2
-  window_manager: ^0.4.3
-  floating: ^6.0.0
-  flutter_inappwebview: ^6.1.5
-  connectivity_plus: ^6.1.3
-  qr_code_scanner: ^1.0.1
-  volume_controller: ^2.0.7
+  #系统交互
+  package_info_plus: ^8.2.1 #包信息
+  device_info_plus: ^11.3.0 #设备信息
+  url_launcher: ^6.3.1 #打开链接
+  share_plus: ^10.1.4 #分享
+  path_provider: ^2.1.3 #常用路径
+  cross_file: ^0.3.4+1 #跨平台文件
+  permission_handler: ^11.3.1 #权限处理
+  flutter_image_gallery_saver: ^0.0.2 #图片保存到相册
+  screen_brightness: ^2.1.2 #亮度控制
+  auto_orientation_v2: ^2.3.6 #屏幕方向
+  wakelock_plus: ^1.3.1 #屏幕常亮
+  file_picker: ^10.1.2 #文件选择
+  window_manager: ^0.5.0 #窗口管理
+  floating: ^6.0.0 #PIP画中画
+  flutter_inappwebview: ^6.1.5 #WebView
+  connectivity_plus: ^6.0.3 #网络状态
+  flutter_single_instance: ^1.5.1 #应用启动检测
+  qr_code_scanner_plus: ^2.0.10+1 #二维码扫描
 
   # 网络相关
+  webdav_client: ^1.2.2 # WebDAV
   shelf: ^1.4.1
   shelf_router: ^1.1.4
   network_info_plus: ^6.1.3
-  signalr_netcore: ^1.3.9
+  signalr_netcore: ^1.3.9 #SignalR
 
   # 视频播放
-  media_kit: ^1.1.11
-  media_kit_video: ^1.2.5
-  media_kit_libs_video: ^1.0.5
+  media_kit: ^1.2.0 # Primary package.
+  media_kit_video: ^1.3.0 # For video rendering.
+  media_kit_libs_video: ^1.0.6 # Native video dependencies.
 
-  flutter:
+  flutter: 
     sdk: flutter
-  flutter_localizations:
+  flutter_localizations: 
     sdk: flutter
 
-dependency_overrides:
-  screen_brightness: ^2.1.2
-
-dev_dependencies:
-  flutter_lints: ^4.0.0
-  build_runner: ^2.4.13
-  hive_generator: ^2.0.1
+dev_dependencies: 
+  flutter_lints: ^6.0.0
+  build_runner: ^2.3.3
+  hive_generator: ^2.0.0
   flutter_launcher_icons: ^0.13.1
-  flutter_test:
+  flutter_test: 
     sdk: flutter
 
 flutter_launcher_icons:
@@ -93,10 +90,11 @@ flutter_launcher_icons:
   macos:
     generate: true
 
-flutter:
+flutter: 
   uses-material-design: true
   assets:
     - assets/statement.txt
     - assets/images/
     - assets/icons/
     - assets/lotties/
+    - shorebird.yaml
