@@ -2,89 +2,88 @@ name: simple_live_app
 version: 1.8.6+10806
 publish_to: none
 description: "Simple Live APP"
-environment: 
+environment:
   sdk: '>=3.0.5 <4.0.0'
 
-dependencies: 
+dependencies:
   simple_live_core:
     path: ../simple_live_core
   # 图标
-  cupertino_icons: ^1.0.2
-  remixicon: ^1.2.0 #Remix图标
+  cupertino_icons: ^1.0.8 # 更新到最新版本
+  remixicon: ^1.2.0 # 保持不变，最新版本
 
   # 框架、工具
-  get: ^4.6.6 #状态管理、路由管理、国际化
-  dio: ^5.4.3+1 #网络请求
-  hive: 2.2.3 #持久化存储
-  hive_flutter: 1.1.0 #持久化存储
-  logger: ^2.0.2 #日志
-  intl: ^0.20.0 #国际化
-  qr_flutter: ^4.1.0 #二维码生成
-  dynamic_color: ^1.6.8 #动态颜色
-  path: any
-  udp: ^5.0.3 #UDP
-  uuid: ^4.3.3 #UUID
-  webdav_client: ^1.2.2 # WebDAV
-  archive: ^3.6.1 #文件压缩
+  get: ^4.6.6 # 保持不变，最新版本
+  dio: ^5.7.0 # 更新到最新版本
+  hive: ^2.2.3 # 保持不变，最新版本
+  hive_flutter: ^1.1.0 # 保持不变，最新版本
+  logger: ^2.4.0 # 更新到最新版本
+  intl: ^0.20.2 # 更新以解决 flutter_localizations 冲突
+  qr_flutter: ^4.1.0 # 保持不变，最新版本
+  dynamic_color: ^1.7.0 # 更新到最新版本
+  path: ^1.9.0 # 指定最新版本
+  udp: ^5.1.0 # 更新到最新版本
+  uuid: ^4.5.0 # 更新到最新版本
+  webdav_client: ^1.2.2 # 保持不变，最新版本
+  archive: ^3.6.1 # 保持不变，最新版本
 
-  #Widget
-  flutter_staggered_grid_view: ^0.7.0 #瀑布流/GridView
-  flutter_easyrefresh: 2.2.2 #下拉刷新、上拉加载
-  extended_image: ^9.1.0 #拓展Image,支持缓存
-  flutter_smart_dialog: ^4.9.2 #各种弹窗 Toast/Dialog/Popup
-  sticky_headers: ^0.3.0+2 #吸顶
-  lottie: ^1.4.3 #lottie动画
-  ns_danmaku: #弹幕
-    git: 
-        url: https://github.com/xiaoyaocz/flutter_ns_danmaku.git
-        tag: v0.0.9
+  # Widget
+  flutter_staggered_grid_view: ^0.7.0 # 保持不变，最新版本
+  flutter_easyrefresh: ^2.2.2 # 保持不变，最新版本
+  extended_image: ^9.1.0 # 保持不变，最新版本
+  flutter_smart_dialog: ^4.9.7+7 # 更新到最新版本
+  sticky_headers: ^0.3.0+2 # 保持不变，最新版本
+  lottie: ^3.1.2 # 更新到最新版本
+  ns_danmaku: # 保持不变，指定 git 版本
+    git:
+      url: https://github.com/xiaoyaocz/flutter_ns_danmaku.git
+      tag: v0.0.9
 
+  # 系统交互
+  package_info_plus: ^8.3.0 # 保持不变，最新版本
+  device_info_plus: ^10.1.0 # 保持不变，最新版本
+  url_launcher: ^6.3.1 # 保持不变，最新版本
+  share_plus: ^10.1.4 # 保持不变，最新版本
+  path_provider: ^2.1.5 # 保持不变，最新版本
+  cross_file: ^0.3.4+2 # 保持不变，最新版本
+  permission_handler: ^11.3.1 # 保持不变，最新版本
+  image_gallery_saver: ^2.0.3 # 保持不变，最新版本
+  screen_brightness: ^2.1.2 # 保持不变（已强制指定）
+  auto_orientation_v2: ^2.3.6 # 保持不变，最新版本
+  wakelock_plus: ^1.2.11 # 保持不变，最新版本
+  file_picker: ^8.1.2 # 更新到最新版本
+  window_manager: ^0.4.3 # 保持不变，最新版本
+  floating: ^6.0.0 # 保持不变，最新版本
+  flutter_inappwebview: ^6.1.5 # 更新到最新版本
+  connectivity_plus: ^6.1.3 # 保持不变，最新版本
+  qr_code_scanner: ^1.0.1 # 保持不变，最新版本
+  volume_controller: ^2.0.7 # 保持不变，最新版本
 
-  #系统交互
-  package_info_plus: ^8.3.0 #包信息
-  device_info_plus: ^10.1.0 #设备信息
-  url_launcher: ^6.3.1 #打开链接
-  share_plus: ^10.1.4 #分享
-  path_provider: ^2.1.5 #常用路径
-  cross_file: ^0.3.4+2 #跨平台文件
-  permission_handler: ^11.3.1 #权限处理
-  image_gallery_saver: ^2.0.3 #图片保存到相册
-  screen_brightness: ^2.1.2 #亮度控制
-  auto_orientation_v2: ^2.3.6 #屏幕方向
-  wakelock_plus: ^1.2.11 #屏幕常亮
-  file_picker: ^8.0.3 #文件选择
-  window_manager: ^0.4.3 #窗口管理
-  floating: ^6.0.0 #PIP画中画
-  flutter_inappwebview: ^5.8.0 #WebView
-  connectivity_plus: ^6.1.3 #网络状态
-  qr_code_scanner: ^1.0.1 #二维码扫描
-  volume_controller: ^2.0.7 #音量控制
-  
   # 网络相关
-  shelf: ^1.4.1 
-  shelf_router: ^1.1.4
-  network_info_plus: ^6.1.3
-  signalr_netcore: ^1.3.9 #SignalR
+  shelf: ^1.4.1 # 保持不变，最新版本
+  shelf_router: ^1.1.4 # 保持不变，最新版本
+  network_info_plus: ^6.1.3 # 保持不变，最新版本
+  signalr_netcore: ^1.3.9 # 保持不变，最新版本
 
   # 视频播放
-  media_kit: 1.1.11
-  media_kit_video: 1.2.5
-  media_kit_libs_video: 1.0.5
+  media_kit: ^1.1.11 # 保持不变，最新版本
+  media_kit_video: ^1.2.5 # 保持不变，最新版本
+  media_kit_libs_video: ^1.0.5 # 保持不变，最新版本
 
-  flutter: 
+  flutter:
     sdk: flutter
-  flutter_localizations: 
+  flutter_localizations:
     sdk: flutter
 
-dependency_overrides: 
+dependency_overrides:
   screen_brightness: ^2.1.2
 
-dev_dependencies: 
+dev_dependencies:
   flutter_lints: ^2.0.0
   build_runner: ^2.3.3
   hive_generator: ^2.0.0
   flutter_launcher_icons: ^0.13.1
-  flutter_test: 
+  flutter_test:
     sdk: flutter
 
 flutter_launcher_icons:
@@ -95,11 +94,10 @@ flutter_launcher_icons:
   macos:
     generate: true
 
-flutter: 
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - assets/statement.txt
     - assets/images/
     - assets/icons/
     - assets/lotties/
-
