@@ -1,11 +1,10 @@
 name: app-build-action-master
-
+# 推送 Tag 时触发
 on:
   workflow_dispatch: # 允许手动触发
   push:
     tags:
       - "v*"
-
 jobs:
   build-android:
     runs-on: macos-latest
@@ -15,7 +14,6 @@ jobs:
       # 签出代码
       - uses: actions/checkout@v4
         with:
-          repository: SlotSun/dart_simple_live
           ref: master
 
       # APK 签名设置
@@ -56,7 +54,7 @@ jobs:
       - name: Build APK
         run: |
           cd simple_live_app
-          flutter build apk --release --split-per-abi --stacktrace
+          flutter build apk --release --split-per-abi
 
       # 上传 APK 至 Artifacts
       - name: Upload APK to Artifacts
@@ -79,9 +77,8 @@ jobs:
       - name: Echo version content
         run: echo "${{ fromJson(steps.version.outputs.content).version_desc }}"
 
-      # 上传至 Release（仅在推送标签时执行）
+      # 上传至 Release
       - name: Upload Release
-        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
           name: "${{ fromJson(steps.version.outputs.content).version }}"
